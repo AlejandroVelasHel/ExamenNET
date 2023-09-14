@@ -2,7 +2,7 @@
 {
     public class ViewVenta
     {
-        public DateTime fecha { get; set; }
+        public string fecha { get; set; }
 
         public int cantidad { get; set; }
     }

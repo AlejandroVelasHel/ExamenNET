@@ -21,18 +21,19 @@ namespace GraficaSantiago.Controllers
 
         public IActionResult resumenVenta()
         {
-            DateTime FechaInicio = DateTime.Now;
-            FechaInicio = FechaInicio.AddDays(-5);
-            var Lista = (from data in _dbcontext.Ventas.ToList()
-                         group data by data.FechaVenta into gr
-                         select new ViewVenta
-                         {
-                             cantidad = gr.Count(),
-                             fecha = (DateTime)gr.Key
-                         }
-                         );
-            return View(Lista);
+            DateTime fechaInicio = DateTime.Now;
+            fechaInicio = fechaInicio.AddDays(-30);
 
+            List<ViewVenta> Lista = (from data in _dbcontext.Ventas
+                                    where data.FechaVenta.Date >= fechaInicio.Date
+                                    group data by data.FechaVenta.Date into grupo
+                                    select new ViewVenta
+                                    {
+                                        fecha = grupo.Key.ToString("dd/MM/yy"),
+                                        cantidad = grupo.Count(),
+                                    }
+                                    ).ToList();
+            return StatusCode(StatusCodes.Status200OK, Lista);
         }
 
         public IActionResult resumenProducto()

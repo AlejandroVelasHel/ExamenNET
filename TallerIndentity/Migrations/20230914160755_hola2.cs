@@ -50,53 +50,53 @@ namespace TallerIndentity.Migrations
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
                 });
 
-            //migrationBuilder.CreateTable(
-            //    name: "Clientes",
-            //    columns: table => new
-            //    {
-            //        IdClientes = table.Column<int>(type: "int", nullable: false)
-            //            .Annotation("SqlServer:Identity", "1, 1"),
-            //        Cedula = table.Column<int>(type: "int", nullable: false),
-            //        Nombre = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-            //        Apellido = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-            //        Direccion = table.Column<string>(type: "varchar(80)", unicode: false, maxLength: 80, nullable: false),
-            //        Telefono = table.Column<string>(type: "varchar(15)", unicode: false, maxLength: 15, nullable: false)
-            //    },
-            //    constraints: table =>
-            //    {
-            //        table.PrimaryKey("PK__Clientes__5EB79C21DA878A42", x => x.IdClientes);
-            //    });
+            migrationBuilder.CreateTable(
+                name: "Clientes",
+                columns: table => new
+                {
+                    IdClientes = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Cedula = table.Column<int>(type: "int", nullable: false),
+                    Nombre = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    Apellido = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    Direccion = table.Column<string>(type: "varchar(80)", unicode: false, maxLength: 80, nullable: false),
+                    Telefono = table.Column<string>(type: "varchar(15)", unicode: false, maxLength: 15, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__Clientes__5EB79C21DA878A42", x => x.IdClientes);
+                });
 
-            //migrationBuilder.CreateTable(
-            //    name: "Productos",
-            //    columns: table => new
-            //    {
-            //        IdProductos = table.Column<int>(type: "int", nullable: false)
-            //            .Annotation("SqlServer:Identity", "1, 1"),
-            //        Codigo = table.Column<int>(type: "int", nullable: false),
-            //        Nombre = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-            //        Precio = table.Column<double>(type: "float", nullable: false),
-            //        Cantidad = table.Column<int>(type: "int", nullable: false)
-            //    },
-            //    constraints: table =>
-            //    {
-            //        table.PrimaryKey("PK__Producto__718C7D0723F98FE9", x => x.IdProductos);
-            //    });
+            migrationBuilder.CreateTable(
+                name: "Productos",
+                columns: table => new
+                {
+                    IdProductos = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Codigo = table.Column<int>(type: "int", nullable: false),
+                    Nombre = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    Precio = table.Column<double>(type: "float", nullable: false),
+                    Cantidad = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__Producto__718C7D0723F98FE9", x => x.IdProductos);
+                });
 
-            //migrationBuilder.CreateTable(
-            //    name: "Usuario",
-            //    columns: table => new
-            //    {
-            //        Id = table.Column<int>(type: "int", nullable: false)
-            //            .Annotation("SqlServer:Identity", "1, 1"),
-            //        Nombre = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
-            //        Fecha = table.Column<DateTime>(type: "date", nullable: true),
-            //        Clave = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true)
-            //    },
-            //    constraints: table =>
-            //    {
-            //        table.PrimaryKey("PK__Usuario__3214EC0787580B86", x => x.Id);
-            //    });
+            migrationBuilder.CreateTable(
+                name: "Usuario",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
+                    Fecha = table.Column<DateTime>(type: "date", nullable: true),
+                    Clave = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__Usuario__3214EC0787580B86", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
@@ -204,51 +204,51 @@ namespace TallerIndentity.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            //migrationBuilder.CreateTable(
-            //    name: "Ventas",
-            //    columns: table => new
-            //    {
-            //        IdVenta = table.Column<int>(type: "int", nullable: false)
-            //            .Annotation("SqlServer:Identity", "1, 1"),
-            //        FechaVenta = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
-            //        ClienteId = table.Column<int>(type: "int", nullable: false),
-            //        Total = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
-            //    },
-            //    constraints: table =>
-            //    {
-            //        table.PrimaryKey("PK__Ventas__BC1240BDDDDE4B23", x => x.IdVenta);
-            //        table.ForeignKey(
-            //            name: "FK__Ventas__ClienteI__52593CB8",
-            //            column: x => x.ClienteId,
-            //            principalTable: "Clientes",
-            //            principalColumn: "IdClientes");
-            //    });
+            migrationBuilder.CreateTable(
+                name: "Ventas",
+                columns: table => new
+                {
+                    IdVenta = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FechaVenta = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "(getdate())"),
+                    ClienteId = table.Column<int>(type: "int", nullable: false),
+                    Total = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__Ventas__BC1240BDDDDE4B23", x => x.IdVenta);
+                    table.ForeignKey(
+                        name: "FK__Ventas__ClienteI__52593CB8",
+                        column: x => x.ClienteId,
+                        principalTable: "Clientes",
+                        principalColumn: "IdClientes");
+                });
 
-            //migrationBuilder.CreateTable(
-            //    name: "DetallesVentas",
-            //    columns: table => new
-            //    {
-            //        DetalleVentaId = table.Column<int>(type: "int", nullable: false)
-            //            .Annotation("SqlServer:Identity", "1, 1"),
-            //        VentaId = table.Column<int>(type: "int", nullable: false),
-            //        ProductoId = table.Column<int>(type: "int", nullable: false),
-            //        Cantidad = table.Column<int>(type: "int", nullable: false),
-            //        Valor = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
-            //    },
-            //    constraints: table =>
-            //    {
-            //        table.PrimaryKey("PK__Detalles__340EEDA4B5D78E02", x => x.DetalleVentaId);
-            //        table.ForeignKey(
-            //            name: "FK__DetallesV__Produ__5629CD9C",
-            //            column: x => x.ProductoId,
-            //            principalTable: "Productos",
-            //            principalColumn: "IdProductos");
-            //        table.ForeignKey(
-            //            name: "FK__DetallesV__Venta__5535A963",
-            //            column: x => x.VentaId,
-            //            principalTable: "Ventas",
-            //            principalColumn: "IdVenta");
-            //    });
+            migrationBuilder.CreateTable(
+                name: "DetallesVentas",
+                columns: table => new
+                {
+                    DetalleVentaId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    VentaId = table.Column<int>(type: "int", nullable: false),
+                    ProductoId = table.Column<int>(type: "int", nullable: false),
+                    Cantidad = table.Column<int>(type: "int", nullable: false),
+                    Valor = table.Column<decimal>(type: "decimal(10,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK__Detalles__340EEDA4B5D78E02", x => x.DetalleVentaId);
+                    table.ForeignKey(
+                        name: "FK__DetallesV__Produ__5629CD9C",
+                        column: x => x.ProductoId,
+                        principalTable: "Productos",
+                        principalColumn: "IdProductos");
+                    table.ForeignKey(
+                        name: "FK__DetallesV__Venta__5535A963",
+                        column: x => x.VentaId,
+                        principalTable: "Ventas",
+                        principalColumn: "IdVenta");
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -289,32 +289,32 @@ namespace TallerIndentity.Migrations
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
 
-            //migrationBuilder.CreateIndex(
-            //    name: "UQ__Clientes__B4ADFE3803D0B784",
-            //    table: "Clientes",
-            //    column: "Cedula",
-            //    unique: true);
+            migrationBuilder.CreateIndex(
+                name: "UQ__Clientes__B4ADFE3803D0B784",
+                table: "Clientes",
+                column: "Cedula",
+                unique: true);
 
-            //migrationBuilder.CreateIndex(
-            //    name: "IX_DetallesVentas_ProductoId",
-            //    table: "DetallesVentas",
-            //    column: "ProductoId");
+            migrationBuilder.CreateIndex(
+                name: "IX_DetallesVentas_ProductoId",
+                table: "DetallesVentas",
+                column: "ProductoId");
 
-            //migrationBuilder.CreateIndex(
-            //    name: "IX_DetallesVentas_VentaId",
-            //    table: "DetallesVentas",
-            //    column: "VentaId");
+            migrationBuilder.CreateIndex(
+                name: "IX_DetallesVentas_VentaId",
+                table: "DetallesVentas",
+                column: "VentaId");
 
-            //migrationBuilder.CreateIndex(
-            //    name: "UQ__Producto__06370DACF940F360",
-            //    table: "Productos",
-            //    column: "Codigo",
-            //    unique: true);
+            migrationBuilder.CreateIndex(
+                name: "UQ__Producto__06370DACF940F360",
+                table: "Productos",
+                column: "Codigo",
+                unique: true);
 
-            //migrationBuilder.CreateIndex(
-            //    name: "IX_Ventas_ClienteId",
-            //    table: "Ventas",
-            //    column: "ClienteId");
+            migrationBuilder.CreateIndex(
+                name: "IX_Ventas_ClienteId",
+                table: "Ventas",
+                column: "ClienteId");
         }
 
         /// <inheritdoc />
@@ -335,11 +335,11 @@ namespace TallerIndentity.Migrations
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
 
-            //migrationBuilder.DropTable(
-            //    name: "DetallesVentas");
+            migrationBuilder.DropTable(
+                name: "DetallesVentas");
 
-            //migrationBuilder.DropTable(
-            //    name: "Usuario");
+            migrationBuilder.DropTable(
+                name: "Usuario");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -347,14 +347,14 @@ namespace TallerIndentity.Migrations
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
-            //migrationBuilder.DropTable(
-            //    name: "Productos");
+            migrationBuilder.DropTable(
+                name: "Productos");
 
-            //migrationBuilder.DropTable(
-            //    name: "Ventas");
+            migrationBuilder.DropTable(
+                name: "Ventas");
 
-            //migrationBuilder.DropTable(
-            //    name: "Clientes");
+            migrationBuilder.DropTable(
+                name: "Clientes");
         }
     }
 }
